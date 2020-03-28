@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch , Router, BrowserRouter} from "react-router-dom";
 import Home from "./core/Home";
 import Menu from "./core/Menu";
 import Signup from "./user/Signup";
@@ -19,17 +19,27 @@ import { signout, isAuthenticated } from './auth';
 
 const MainRouter = () => (
     <div>
-        
-        {!isAuthenticated() && (        <Switch>
 
+
+
+        
+        {!isAuthenticated() && (       
+        <div className="main">
+ <Switch>
                  <Route exact path="/signup" component={Signup} />
                  <Route exact path="/" component={Signin} />
                  </Switch>
+                 </div>
             )}
-                    {isAuthenticated() && (
 
-        <Switch>
+
+
+         {isAuthenticated() && (
+
+             <BrowserRouter>   
+             <div>
                     <Menu />
+        <Switch>
 
             <Route exact path="/" component={Home} />
             <PrivateRoute exact path="/admin" component={Admin} />
@@ -56,7 +66,10 @@ const MainRouter = () => (
             <PrivateRoute exact path="/findpeople" component={FindPeople} />
             <PrivateRoute exact path="/user/:userId" component={Profile} />
         </Switch>
+        </div>
+        </BrowserRouter>
                     )}
+                    
     </div>
 );
 

@@ -76,7 +76,9 @@ const Menu = ({ history }) => (
                         <span
                             className="nav-link"
                             style={{ cursor: 'pointer', color: '#fff' }}
-                            onClick={() => signout(() => history.push('/'))}
+                            onClick={() => signout(() =>{ history.push('/')
+                            window.location.reload(false)
+                        })}
                         >
                             Sign Out
                         </span>

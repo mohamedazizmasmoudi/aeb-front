@@ -1,7 +1,24 @@
 import React, { Component } from "react";
 import { signup } from "../auth";
-import { Link } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
+import "./signup.css";
+
+  import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+
+
 
 class Signup extends Component {
     constructor() {
@@ -12,7 +29,7 @@ class Signup extends Component {
             password: "",
             error: "",
             open: false,
-            recaptcha: false
+            recaptcha: true
         };
     }
 
@@ -21,37 +38,7 @@ class Signup extends Component {
         this.setState({ [name]: event.target.value });
     };
 
-    recaptchaHandler = e => {
-        this.setState({ error: "" });
-        let userDay = e.target.value.toLowerCase();
-        let dayCount;
-
-        if (userDay === "sunday") {
-            dayCount = 0;
-        } else if (userDay === "monday") {
-            dayCount = 1;
-        } else if (userDay === "tuesday") {
-            dayCount = 2;
-        } else if (userDay === "wednesday") {
-            dayCount = 3;
-        } else if (userDay === "thursday") {
-            dayCount = 4;
-        } else if (userDay === "friday") {
-            dayCount = 5;
-        } else if (userDay === "saturday") {
-            dayCount = 6;
-        }
-
-        if (dayCount === new Date().getDay()) {
-            this.setState({ recaptcha: true });
-            return true;
-        } else {
-            this.setState({
-                recaptcha: false
-            });
-            return false;
-        }
-    };
+;
 
     clickSubmit = event => {
         event.preventDefault();
@@ -81,70 +68,88 @@ class Signup extends Component {
         }
     };
 
-    signupForm = (name, email, password, recaptcha) => (
-        <form>
-            <div className="form-group">
-                <label className="text-muted">Name</label>
-                <input
-                    onChange={this.handleChange("name")}
-                    type="text"
-                    className="form-control"
-                    value={name}
-                />
-            </div>
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input
-                    onChange={this.handleChange("email")}
-                    type="email"
-                    className="form-control"
-                    value={email}
-                />
-            </div>
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input
-                    onChange={this.handleChange("password")}
-                    type="password"
-                    className="form-control"
-                    value={password}
-                />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">
-                    {recaptcha ? "Thanks. You got it!" : "What day is today?"}
-                </label>
-
-                <input
-                    onChange={this.recaptchaHandler}
-                    type="text"
-                    className="form-control"
-                />
-            </div>
-
-            <button
-                onClick={this.clickSubmit}
-                className="btn btn-raised btn-primary"
-            >
-                Submit
-            </button>
-        </form>
-    );
 
     render() {
         const { name, email, password, error, open, recaptcha } = this.state;
         return (
-            <div className="container">
-                <h2 className="mt-5 mb-5">Signup</h2>
+            
+             <Container component="main" maxWidth="xs">
+             <CssBaseline />
+             <div className="paper">
+               <Avatar className="avatar" style={{    backgroundColor: 'blue'}}>
+                 <LockOutlinedIcon />
+               </Avatar>
+               <Typography component="h1" variant="h5">
+                 Sign up
+               </Typography>
+               <form className="form" noValidate>
+                 <Grid container spacing={2}>
+                   <Grid item xs={12} >
+                     <TextField
+                       onChange={this.handleChange("name")}
+                    type="text"
+                    value={name}
+                      autoComplete="name"
+                       name="Name"
+                       variant="outlined"
+                       required
+                       fullWidth
+                       id="Name"
+                       label="Name"
+                       fullWidth
 
-                <hr />
-                <SocialLogin />
-
-                <hr />
-                <br />
-
-                <div
+                       autoFocus
+                     />
+                   </Grid>
+             
+                   <Grid item xs={12}>
+                     <TextField
+                          onChange={this.handleChange("email")}
+                          type="email"
+                          value={email}
+                       variant="outlined"
+                       required
+                       fullWidth
+                       id="email"
+                       label="Email Address"
+                       name="email"
+                       autoComplete="email"
+                     />
+                   </Grid>
+                   <Grid item xs={12}>
+                     <TextField
+                            onChange={this.handleChange("password")}
+                            type="password"
+                            value={password}
+                       variant="outlined"
+                       required
+                       fullWidth
+                       name="password"
+                       label="Password"
+                       type="password"
+                       id="password"
+                       autoComplete="current-password"
+                     />
+                   </Grid>
+                   <Grid item xs={12}>
+                     <FormControlLabel
+                       control={<Checkbox value="allowExtraEmails" color="primary" />}
+                       label="I want to receive inspiration, marketing promotions and updates via email."
+                     />
+                   </Grid>
+                 </Grid>
+                 <Button
+                                 onClick={this.clickSubmit}
+                                 style={{marginTop: 24 + 'px', marginBottom: 24 + 'px' }}
+                   type="submit"
+                   fullWidth
+                   variant="contained"
+                   color="primary"
+                   className="submit"
+                 >
+                   Sign Up
+                 </Button>
+                 <div
                     className="alert alert-danger"
                     style={{ display: error ? "" : "none" }}
                 >
@@ -158,9 +163,25 @@ class Signup extends Component {
                     New account is successfully created. Please{" "}
                     <Link to="/signin">Sign In</Link>.
                 </div>
-
-                {this.signupForm(name, email, password, recaptcha)}
-            </div>
+                 <Grid container justify="flex-end">
+                   <Grid item>
+                     <Link href="/" variant="body2">
+                       Already have an account? Sign in
+                     </Link>
+                   </Grid>
+                 </Grid>
+               </form>
+             </div>
+             <Box mt={5}>
+             <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        ae
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>             </Box>
+           </Container>
         );
     }
 }
