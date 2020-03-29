@@ -1,0 +1,39 @@
+ .bo{
+    color: #fff;
+    background-color: #1976d2;
+}
+a{
+color: #fff;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-light .navbar-nav .nav-linkk {
+    color:
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color:white;
+} 
+a:hover {
+    color: #ffffff;}
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+
+
+  
+  
+.root {
+    flex-grow: 1;
+  }
+  .menuButton {
+    margin-Right: 2px;
+  }
+  .title {
+    flex-grow: 1;
+  };
+  
+  
