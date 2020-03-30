@@ -4,7 +4,7 @@ import DefaultPost from '../images/mountains.jpg';
 import { Link, Redirect } from 'react-router-dom';
 import { isAuthenticated } from '../auth';
 import Comment from './Comment';
-
+import TextField from '@material-ui/core/TextField';
 class SinglePost extends Component {
     state = {
         post: '',
@@ -176,7 +176,7 @@ class SinglePost extends Component {
         }
 
         return (
-            <div className="container">
+            <div className="container" style={{paddingTop:50+"px"}}>
                 <h2 className="display-2 mt-5 mb-5">{post.title}</h2>
 
                 {!post ? (

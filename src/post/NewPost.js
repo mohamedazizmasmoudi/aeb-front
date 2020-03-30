@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import { Redirect } from "react-router-dom";
+import TextField from '@material-ui/core/TextField';
 
 class NewPost extends Component {
   constructor() {
@@ -77,30 +78,27 @@ class NewPost extends Component {
     <form>
       <div className="form-group">
         <label className="text-muted"> Post Photo </label>{" "}
-        <input
-          onChange={this.handleChange("photo")}
+        <TextField id="standard-basic" label="Standard"  onChange={this.handleChange("photo")}
           type="file"
           accept="image/*"
-          className="form-control"
-        />
+          className="form-control"/>
+
+        
       </div>{" "}
       <div className="form-group">
-        <label className="text-muted"> Title </label>{" "}
-        <input
-          onChange={this.handleChange("title")}
+        <TextField id="standard-basic" label="Title"  onChange={this.handleChange("title")}
           type="text"
           className="form-control"
-          value={title}
-        />{" "}
+          value={title}/>
+      
       </div>
       <div className="form-group">
-        <label className="text-muted"> Body </label>{" "}
-        <textarea
-          onChange={this.handleChange("body")}
+    
+        <TextField id="standard-basic" label="Body"  onChange={this.handleChange("body")}
           type="text"
           className="form-control"
-          value={body}
-        />{" "}
+          value={body}/>
+     
       </div>
       <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
         Create Post{" "}
