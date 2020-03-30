@@ -15,14 +15,16 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menuu from '@material-ui/core/Menu';
-
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import SearchIcon from '@material-ui/icons/Search';
+import HomeIcon from '@material-ui/icons/Home';
 const isActive = (history, path) => {
     if (history.location.pathname === path) return { color: '#ff9900' };
     else return { color: '#ffffff' };
 };
 
 const Menu = ({ history }) => (
-    <div >    
+    <div position="fixed" style={{marginBottom:50+"px"}}>    
 {/* 
             {isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                 <li className="nav-item">
@@ -30,11 +32,12 @@ const Menu = ({ history }) => (
                         Admin
                     </Link>
                 </li>
-            )} */}<AppBar position="static">
+            )} */}<AppBar  >
+        <Navbar expand="lg"className="bo"> 
+ <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar expand="lg"className="bo">
         <Typography variant="h6" className="title">
-  <Link className="nav-link" style={isActive(history, '/')} to="/">
+  <Link className="nav-link" to="/">
                     Home
                 </Link>
     </Typography>
@@ -42,32 +45,37 @@ const Menu = ({ history }) => (
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
     </Form> */}
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Toolbar>
   <Navbar.Collapse id="basic-navbar-nav">
   <Typography variant="h6" className="title">
-  <Link className="nav-link" style={isActive(history, '/')} to="/">
+  <Link className="nav-link"  to="/">
                     
                 </Link>
     </Typography>
+    {isAuthenticated() && (
 
 
-
+    <Link className="nav-link" to="/">
+                  <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu">
+    <HomeIcon />
+  </IconButton>     
+                    </Link>
+  )}
     {isAuthenticated() && (
 
 <Link
-                  className={history.location.pathname === '/users' ? 'active nav-link' : 'not-active nav-link'}
-                  to="/users"
+                  className={history.location.pathname === '/findpeople' ? 'active nav-link' : 'not-active nav-link'}
+                  to="/findpeople"
               >
 <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu">
-    <MenuIcon />
+    <SearchIcon />
   </IconButton>                </Link> 
   )}
     {isAuthenticated() && (
 
   <Link to={`/post/create`}  className="nav-link">
 <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu">
-    <MenuIcon />
+    <AddCircleIcon />
   </IconButton>                </Link>
     )}
         {!isAuthenticated() && (
@@ -107,17 +115,16 @@ const Menu = ({ history }) => (
 
         {isAuthenticated() && (
 
-<NavDropdown title="Dropdown" id="basic-nav-dropdown" className="nav-link">
+<NavDropdown title="                                " id="basic-nav-dropdown" className="nav-link "style={{marginleft:100 + 'px'}} >
 
-
-<NavDropdown.Item href="/findpeople"style={isActive(history, `/findpeople`)}> 
-<Link to={`/findpeople`}   className="nav-linkk" style={{    color:'black'
-            }}> <MenuItem >
-            Find People</MenuItem>
+<NavDropdown.Item href="/users"style={isActive(history, `/users`)} > 
+<Link to={`/users`}   className="nav-linkk" style={{    color:'black'
+            }}> 
+            People
         </Link></NavDropdown.Item>
 <NavDropdown.Divider />
 
-<NavDropdown.Item >        <span style={{ cursor: 'pointer', color: '#fff' }}
+<NavDropdown.Item  >        <span style={{ cursor: 'pointer', color: '#fff' ,marginright: 20 + 'px' }}
             onClick={() => signout(() => {
                 history.push('/')
                 window.location.reload(true)

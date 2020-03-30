@@ -142,7 +142,7 @@ class EditPost extends Component {
         }
 
         return (
-            <div className="container">
+            <div className="container" style={{paddingTop:50+"px"}}>
                 <h2 className="mt-5 mb-5">{title}</h2>
 
                 <div

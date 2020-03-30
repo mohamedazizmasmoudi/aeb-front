@@ -89,7 +89,7 @@ class SinglePost extends Component {
         const { like, likes } = this.state;
 
         return (
-            <div className="card-body">
+            <div className="card-body" style={{paddingTop:50+"px"}}>
                 <img
                     src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                     alt={post.title}

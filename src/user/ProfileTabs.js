@@ -6,7 +6,7 @@ class ProfileTabs extends Component {
     render() {
         const { following, followers, posts } = this.props;
         return (
-            <div>
+            <div style={{paddingTop:50+"px"}}>
                 <div className="row">
                     <div className="col-md-4">
                         <h3 className="text-primary">

@@ -84,7 +84,7 @@ class FindPeople extends Component {
     render() {
         const { users, open, followMessage } = this.state;
         return (
-            <div className="container">
+            <div className="container" style={{paddingTop:50+"px"}}>
                 <h2 className="mt-5 mb-5">Find People</h2>
 
                 {open && (

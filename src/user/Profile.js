@@ -88,7 +88,7 @@ class Profile extends Component {
       : DefaultProfile;
 
     return (
-      <div className="container">
+      <div className="container" style={{paddingTop:50+"px"}}>
         <h2 className="mt-5 mb-5">Profile</h2>
         <div className="row">
           <div className="col-md-4">

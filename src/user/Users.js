@@ -22,7 +22,7 @@ class Users extends Component {
     }
 
     renderUsers = users => (
-        <div className="row">
+        <div className="row" style={{paddingTop:50+"px"}}>
             {users.map((user, i) => (
                 <div className="card col-md-4" key={i}>
                     <img

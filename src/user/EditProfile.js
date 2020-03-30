@@ -187,7 +187,7 @@ class EditProfile extends Component {
       : DefaultProfile;
 
     return (
-      <div className="container">
+      <div className="container" style={{paddingTop:50+"px"}}>
         <h2 className="mt-5 mb-5">Edit Profile</h2>
         <div
           className="alert alert-danger"
