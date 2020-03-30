@@ -3,6 +3,7 @@ import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import { Redirect } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class NewPost extends Component {
   constructor() {
@@ -75,7 +76,7 @@ class NewPost extends Component {
   };
 
   newPostForm = (title, body) => (
-    <form>
+    <form className="container col-md-6">
       <div className="form-group">
         <label className="text-muted"> Post Photo </label>{" "}
         <TextField id="standard-basic" label="Standard"  onChange={this.handleChange("photo")}
@@ -100,9 +101,19 @@ class NewPost extends Component {
           value={body}/>
      
       </div>
-      <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
-        Create Post{" "}
-      </button>{" "}
+      
+      <Button
+                              onClick={this.clickSubmit}
+
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className="submit jss4"
+                style={{marginTop: 24 + 'px', marginBottom: 24 + 'px',marginLeft:145 +'px' ,width:50+'%' }}
+              >
+                Create Post
+              </Button>
     </form>
   );
 
