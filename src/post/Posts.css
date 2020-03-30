@@ -1,0 +1,18 @@
+/* .root {
+    max-Width: 345px
+  } */
+  .media {
+    height: 0;
+    padding-top: ;
+  }
+  .expand {
+    transform: 'rotate(0deg)';
+    margin-left: auto;
+ 
+  }
+  .expandOpen {
+    transform: 'rotate(180deg)',
+  }
+  .avatar {
+    background-Color: red;
+  }
