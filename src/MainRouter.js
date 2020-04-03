@@ -27,7 +27,7 @@ const MainRouter = () => (
         <div className="main">
  <Switch>
  <Route exact path="/" component={ Signup} />
-                 <Route exact path="/signin" component={Signin} />
+                 <Route exact path="/login" component={Signin} />
                  </Switch>
                  </div>
             )}
@@ -40,6 +40,7 @@ const MainRouter = () => (
              <div>
                     <Menu />
         <Switch>
+        <Route exact path="/signin" component={Signin} />
 
             <Route exact path="/" component={Home} />
             <PrivateRoute exact path="/admin" component={Admin} />

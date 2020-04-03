@@ -165,7 +165,7 @@ class Signup extends Component {
                 </div>
                  <Grid container justify="flex-end">
                    <Grid item>
-                     <Link href="/signin" variant="body2" className="opa">
+                     <Link href="/login" variant="body2" className="opa">
                        Already have an account? Sign in
                      </Link>
                    </Grid>
