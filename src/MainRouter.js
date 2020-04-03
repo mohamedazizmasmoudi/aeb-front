@@ -24,9 +24,9 @@ const MainRouter = () => (
 
         
         {!isAuthenticated() && (       
-        <div >
- <Route exact path="/signin" component={Signin} />
-                 <Route exact path="/" component={Signup} />
+        <div className="main">
+ <Route exact path="/" component={Signin} />
+                 <Route exact path="/signup" component={Signup} />
 
                  </div>
             )}
@@ -48,6 +48,7 @@ const MainRouter = () => (
                 path="/reset-password/:resetPasswordToken"
                 component={ResetPassword}
             />
+
             <Route exact path="/post/create" component={NewPost} />
             <Route exact path="/post/:postId" component={SinglePost} />
             <PrivateRoute
