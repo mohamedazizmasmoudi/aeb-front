@@ -19,17 +19,16 @@ import { signout, isAuthenticated } from './auth';
 
 const MainRouter = () => (
     <div>
-                 <Route exact path="/signup" component={Signup} />
 
 
 
-        
+<Route exact path="/signup" component={Signup} />
+
         {!isAuthenticated() && (       
             
         <div className="main">
  <Switch>
  <Route exact path="/" component={Signin} />
-                 <Route exact path="/signup" component={Signup} />
                  </Switch>
                  </div>
             )}
@@ -42,6 +41,7 @@ const MainRouter = () => (
              <div>
                     <Menu />
         <Switch>
+        <Route exact path="/signup" component={Signup} />
 
             <Route exact path="/" component={Home} />
             <PrivateRoute exact path="/admin" component={Admin} />
