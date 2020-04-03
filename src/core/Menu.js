@@ -117,13 +117,19 @@ const Menu = ({ history }) => (
 
 <NavDropdown title="                                " id="basic-nav-dropdown" className="nav-link "style={{marginleft:100 + 'px'}} >
 
-<NavDropdown.Item href="/users"style={isActive(history, `/users`)} > 
+{/* <NavDropdown.Item href="/users"style={isActive(history, `/users`)} > 
 <Link to={`/users`}   className="nav-linkk" style={{    color:'black'
             }}> 
             People
-        </Link></NavDropdown.Item>
+        </Link></NavDropdown.Item> */}
 <NavDropdown.Divider />
-
+<a style={{ cursor: 'pointer', color: '#fff' ,marginright: 20 + 'px' }}
+            onClick={() => signout(() => {
+                history.push('/')
+                window.location.reload(true)
+            })}
+            className="nav-linkk" style={{    color:'black'
+            }} >
 <NavDropdown.Item  >        <span style={{ cursor: 'pointer', color: '#fff' ,marginright: 20 + 'px' }}
             onClick={() => signout(() => {
                 history.push('/')
@@ -134,7 +140,7 @@ const Menu = ({ history }) => (
            
         >
             Sign Out
-        </span></NavDropdown.Item>
+        </span></NavDropdown.Item></a>
 </NavDropdown>
 )}
 

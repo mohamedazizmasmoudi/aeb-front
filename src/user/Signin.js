@@ -177,12 +177,12 @@ class Signin extends Component {
                 )}
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2" className="opa">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link href="/signup" variant="body2" className="opa">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

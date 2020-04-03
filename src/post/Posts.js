@@ -55,13 +55,13 @@ class Posts extends Component {
 
   renderPosts = posts => {
     return (
-      <div className="row">
+      <div className="container">
         {posts.map((post, i) => {
           const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
           const posterName = post.postedBy ? post.postedBy.name : " Unknown";
 
           return (
-            <div className="col-md-7 container" key={i} style={{ paddingTop: 50 + "px" }}>
+            <div className="col-md-5 container" key={i} style={{ paddingTop: 50 + "px" }}>
 
         <Card className="root">
           <CardHeader
