@@ -19,8 +19,27 @@ import { signout, isAuthenticated } from './auth';
 
 const MainRouter = () => (
     <div>
-        <Menu />
+
+
+
+        
+        {!isAuthenticated() && (       
+        <div className="main">
+ <Route exact path="/" component={Signin} />
+                 <Route exact path="/signup" component={Signup} />
+
+                 </div>
+            )}
+
+
+
+         {isAuthenticated() && (
+
+             <BrowserRouter>   
+             <div>
+                    <Menu />
         <Switch>
+
             <Route exact path="/" component={Home} />
             <PrivateRoute exact path="/admin" component={Admin} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
@@ -29,7 +48,7 @@ const MainRouter = () => (
                 path="/reset-password/:resetPasswordToken"
                 component={ResetPassword}
             />
-            <PrivateRoute exact path="/post/create" component={NewPost} />
+            <Route exact path="/post/create" component={NewPost} />
             <Route exact path="/post/:postId" component={SinglePost} />
             <PrivateRoute
                 exact
@@ -37,8 +56,7 @@ const MainRouter = () => (
                 component={EditPost}
             />
             <Route exact path="/users" component={Users} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/signin" component={Signin} />
+           
             <PrivateRoute
                 exact
                 path="/user/edit/:userId"
@@ -47,6 +65,10 @@ const MainRouter = () => (
             <PrivateRoute exact path="/findpeople" component={FindPeople} />
             <PrivateRoute exact path="/user/:userId" component={Profile} />
         </Switch>
+        </div>
+        </BrowserRouter>
+                    )}
+                    
     </div>
 );
 
