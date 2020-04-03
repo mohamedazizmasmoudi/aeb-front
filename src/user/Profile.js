@@ -7,7 +7,24 @@ import DeleteUser from "./DeleteUser";
 import FollowProfileButton from "./FollowProfileButton";
 import ProfileTabs from "./ProfileTabs";
 import { listByUser } from "../post/apiPost";
+import DefaultPost from "../images/mountains.jpg";
 
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import { red } from '@material-ui/core/colors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 class Profile extends Component {
   constructor() {
     super();
@@ -88,7 +105,8 @@ class Profile extends Component {
       : DefaultProfile;
 
     return (
-      <div className="container" style={{paddingTop:50+"px"}}>
+      <div>
+      <div className="container col-md-8" style={{paddingTop:50+"px"}}>
         <h2 className="mt-5 mb-5">Profile</h2>
         <div className="row">
           <div className="col-md-4">
@@ -167,8 +185,27 @@ class Profile extends Component {
               following={user.following}
               posts={posts}
             />
+     
           </div>
         </div>
+             <div className="row" >
+      {posts.map((post, i) => (
+    <div key={i} style={{margin:5+'px'}}  className="col-md-4">
+            <Link to={`/post/${post._id}`}>
+<img
+src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+alt={post.title}
+onError={i => (i.target.src = `${DefaultPost}`)}
+className="img-thunbnail mb-3"
+style={{ height: "200px", width: "100%" }}
+/>
+ </Link>
+ 
+    </div>
+))}</div>
+      </div>
+ 
+      
       </div>
     );
   }

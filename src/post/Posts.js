@@ -67,15 +67,24 @@ class Posts extends Component {
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" className="avatar">
-                 <img
-                        style={{ height: "55px", width: "auto" }}
-                        className="img-thumbnail"
-                        src={`${process.env.REACT_APP_API_URL}/user/photo/${
-                          posterId
-                        }`}
-                        onError={i => (i.target.src = `${DefaultProfile}`)}
-                        alt={posterId}
-                    />
+                        <Link to={`/user/${post.postedBy._id}`}>
+                                    <img
+                                        style={{
+                                            borderRadius: "50%",
+                                            border: "0px solid black"
+                                        }}
+                                        className="float-left "
+                                        height="45px"
+                                        width="45px"
+                                        onError={i =>
+                                            (i.target.src = `${DefaultProfile}`)
+                                        }
+                                        src={`${
+                                            process.env.REACT_APP_API_URL
+                                        }/user/photo/${post.postedBy._id}`}
+                                        alt={post.postedBy.name}
+                                    />
+                                </Link>
               </Avatar>
             }
             action={

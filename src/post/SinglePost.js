@@ -89,7 +89,7 @@ class SinglePost extends Component {
         const { like, likes } = this.state;
 
         return (
-            <div className="card-body" style={{paddingTop:50+"px"}}>
+            <div className="card-body container col-md-6" style={{paddingTop:50+"px"}}>
                 <img
                     src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                     alt={post.title}
@@ -123,7 +123,7 @@ class SinglePost extends Component {
                 <p className="card-text">{post.body}</p>
                 <br />
                 <p className="font-italic mark">
-                    Posted by <Link to={`${posterId}`}>{posterName} </Link>
+                    Posted by <Link to={`${posterId}`} style={{color:'black'}}>{posterName} </Link>
                     on {new Date(post.created).toDateString()}
                 </p>
                 <div className="d-inline-block">
@@ -176,7 +176,7 @@ class SinglePost extends Component {
         }
 
         return (
-            <div className="container" style={{paddingTop:50+"px"}}>
+            <div className="container " style={{paddingTop:50+"px"}}>
                 <h2 className="display-2 mt-5 mb-5">{post.title}</h2>
 
                 {!post ? (
@@ -186,9 +186,9 @@ class SinglePost extends Component {
                 ) : (
                     this.renderPost(post)
                 )}
-
+<div className="container col-md-6">
                 <Comment postId={post._id} comments={comments.reverse()} updateComments={this.updateComments} />
-            </div>
+          </div>  </div>
         );
     }
 }

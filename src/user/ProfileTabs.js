@@ -34,7 +34,8 @@ class ProfileTabs extends Component {
                                             alt={person.name}
                                         />
                                         <div>
-                                            <p className="lead">
+                                            <p className="lead"              style={{color:'black'}}
+>
                                                 {person.name}
                                             </p>
                                         </div>
@@ -70,7 +71,8 @@ class ProfileTabs extends Component {
                                             alt={person.name}
                                         />
                                         <div>
-                                            <p className="lead">
+                                            <p className="lead"               style={{color:'black'}}
+>
                                                 {person.name}
                                             </p>
                                         </div>
@@ -88,15 +90,21 @@ class ProfileTabs extends Component {
                                 <div>
                                     <Link to={`/post/${post._id}`}>
                                         <div>
-                                            <p className="lead">{post.title}</p>
+                                            <p className="lead"              style={{color:'black'}}
+>{post.title}</p>
                                         </div>
                                     </Link>
                                 </div>
                             </div>
                         ))}
                     </div>
+      
                 </div>
-            </div>
+                        {/* <h3 className="text-primary">{posts.length} Posts</h3> */}
+                        <hr />
+
+
+</div>
         );
     }
 }

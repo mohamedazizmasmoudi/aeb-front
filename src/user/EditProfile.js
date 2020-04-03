@@ -3,6 +3,8 @@ import { isAuthenticated } from "../auth";
 import { read, update, updateUser } from "./apiUser";
 import { Redirect } from "react-router-dom";
 import DefaultProfile from "../images/avatar.jpg";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class EditProfile extends Component {
   constructor() {
@@ -110,10 +112,10 @@ class EditProfile extends Component {
   };
 
   signupForm = (name, email, password, about) => (
-    <form>
+    <form className="container col-md-6">
       <div className="form-group">
         <label className="text-muted">Profile Photo</label>
-        <input
+        <TextField id="standard-basic" label="file"
           onChange={this.handleChange("photo")}
           type="file"
           accept="image/*"
@@ -121,8 +123,7 @@ class EditProfile extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Name</label>
-        <input
+        <TextField id="standard-basic" label="Name"
           onChange={this.handleChange("name")}
           type="text"
           className="form-control"
@@ -130,8 +131,7 @@ class EditProfile extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Email</label>
-        <input
+        <TextField id="standard-basic" label="email" 
           onChange={this.handleChange("email")}
           type="email"
           className="form-control"
@@ -140,8 +140,7 @@ class EditProfile extends Component {
       </div>
 
       <div className="form-group">
-        <label className="text-muted">About</label>
-        <textarea
+        <TextField id="standard-basic" label="About"
           onChange={this.handleChange("about")}
           type="text"
           className="form-control"
@@ -150,17 +149,19 @@ class EditProfile extends Component {
       </div>
 
       <div className="form-group">
-        <label className="text-muted">Password</label>
-        <input
+        <TextField id="standard-basic" label="Password"
           onChange={this.handleChange("password")}
           type="password"
           className="form-control"
           value={password}
         />
       </div>
-      <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
+      <Button onClick={this.clickSubmit}                  variant="contained"
+               color="primary"
+                style={{marginTop: 24 + 'px', marginBottom: 24 + 'px',marginLeft:145 +'px' ,width:50+'%' }}
+>
         Update
-      </button>
+      </Button>
     </form>
   );
 

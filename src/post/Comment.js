@@ -3,7 +3,8 @@ import { comment, uncomment } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import DefaultProfile from "../images/avatar.jpg";
-
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 class Comment extends Component {
     state = {
         text: "",
@@ -94,7 +95,7 @@ class Comment extends Component {
                             className="form-control"
                             placeholder="Leave a comment..."
                         />
-                        <button className="btn btn-raised btn-success mt-2">
+                        <button className="btn btn-raised btn-primary btn-sm mr-5" >
                             Post
                         </button>
                     </div>
@@ -135,7 +136,7 @@ class Comment extends Component {
                                     <p className="lead">{comment.text}</p>
                                     <p className="font-italic mark">
                                         Posted by{" "}
-                                        <Link
+                                        <Link style={{color:'black'}}
                                             to={`/user/${comment.postedBy._id}`}
                                         >
                                             {comment.postedBy.name}{" "}
