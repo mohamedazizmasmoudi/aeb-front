@@ -174,12 +174,12 @@ class Signup extends Component {
              </div>
              <Box mt={5}>
              <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      {'Made with ❤️ by Aziz Masmoudi '}
+      {/* <Link color="inherit" href="https://material-ui.com/">
         ae
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
+      {'.'} */}
     </Typography>             </Box>
            </Container>
         );

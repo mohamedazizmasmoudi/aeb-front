@@ -219,6 +219,7 @@ class EditProfile extends Component {
         {isAuthenticated().user._id === id &&
           this.signupForm(name, email, password, about)}
       </div>
+      
     );
   }
 }

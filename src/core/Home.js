@@ -9,7 +9,8 @@ const Home = () => (
     <div className="container">
       <Posts />
     </div>
-
+    <div className="container col-md-3"><p>Made with ❤️ by Aziz Masmoudi</p>
+</div>
   </div>
 );
 
