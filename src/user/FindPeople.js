@@ -47,9 +47,9 @@ class FindPeople extends Component {
     };
 
     renderUsers = users => (
-        <div className="row ">
+        <div className="row">
             {users.map((user, i) => (
-                <div className="card col-md-4 "   style={{margin:5+'px',paddingTop:15+'px'}} key={i}>
+                <div className="card col-md-4 "   style={{margin:5+'px',paddingTop:15+'px',marginRight:-5+'px'}} key={i}>
                     <img
                         style={{ height: "200px", width: "auto" }}
                         className="img-thumbnail"
@@ -84,17 +84,19 @@ class FindPeople extends Component {
     render() {
         const { users, open, followMessage } = this.state;
         return (
-            <div className="container " style={{paddingTop:50+"px"}}>
+            <div>
+            <div className="container col-md-8" style={{paddingTop:50+"px"}}>
                 <h2 className="mt-5 mb-5">Find People</h2>
 
                 {open && (
                     <div className="alert alert-success">{followMessage}</div>
                 )}
-            <div  className="container col-md-10"style={{paddingTop:50+"px"}}>
+            
+            </div><div  className="container col-md-8"style={{paddingTop:50+"px"}}>
 
                 {this.renderUsers(users)}
                 </div>
-            </div>
+                </div>
         );
     }
 }
