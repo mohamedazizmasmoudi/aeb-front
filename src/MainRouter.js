@@ -19,20 +19,19 @@ import { signout, isAuthenticated } from './auth';
 
 const MainRouter = () => (
     <div>
+                 <Route exact path="/signup" component={Signup} />
 
 
 
         
         {!isAuthenticated() && (       
-                         <BrowserRouter>   
-
+            
         <div className="main">
  <Switch>
  <Route exact path="/" component={Signin} />
                  <Route exact path="/signup" component={Signup} />
                  </Switch>
-                 </div>        </BrowserRouter>
-
+                 </div>
             )}
 
 
