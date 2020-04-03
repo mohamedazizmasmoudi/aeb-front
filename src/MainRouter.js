@@ -21,28 +21,41 @@ const MainRouter = () => (
     <div>
 
 
+
+        
+        {!isAuthenticated() && (       
+        <div className="main">
+ <Route exact path="/" component={Signin} />
+                 <Route exact path="/signup" component={Signup} />
+
+                 </div>
+            )}
+
+
+
+         {isAuthenticated() && (
+
              <BrowserRouter>   
              <div>
                     <Menu />
         <Switch>
-        <Route exact path="/" component={Signin} />
- <PrivateRoute exact path="/signup" component={Signup} />
-            <PrivateRoute exact path="/" component={Home} />
+
+            <Route exact path="/" component={Home} />
             <PrivateRoute exact path="/admin" component={Admin} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
-            <PrivateRoute
+            <Route
                 exact
                 path="/reset-password/:resetPasswordToken"
                 component={ResetPassword}
             />
             <PrivateRoute exact path="/post/create" component={NewPost} />
-            <PrivateRoute exact path="/post/:postId" component={SinglePost} />
+            <Route exact path="/post/:postId" component={SinglePost} />
             <PrivateRoute
                 exact
                 path="/post/edit/:postId"
                 component={EditPost}
             />
-            <PrivateRoute exact path="/users" component={Users} />
+            <Route exact path="/users" component={Users} />
            
             <PrivateRoute
                 exact
