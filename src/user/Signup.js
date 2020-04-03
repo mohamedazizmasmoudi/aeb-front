@@ -161,11 +161,11 @@ class Signup extends Component {
                     style={{ display: open ? "" : "none" }}
                 >
                     New account is successfully created. Please{" "}
-                    <Link to="/signin">Sign In</Link>.
+                    <Link to="#">Sign In</Link>.
                 </div>
                  <Grid container justify="flex-end">
                    <Grid item>
-                     <Link href="/" variant="body2" className="opa">
+                     <Link href="#" variant="body2" className="opa">
                        Already have an account? Sign in
                      </Link>
                    </Grid>
@@ -174,7 +174,7 @@ class Signup extends Component {
              </div>
             <Box mt={5}>
           <Typography variant="body2" color="textSecondary" align="center">
-      {'Made with ❤️ by Aziz Masmoudi '}
+      {/* {'Made with ❤️ by Aziz Masmoudi '} */}
       {/* <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}

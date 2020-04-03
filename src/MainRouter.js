@@ -16,6 +16,7 @@ import ForgotPassword from "./user/ForgotPassword";
 import ResetPassword from "./user/ResetPassword";
 import Admin from "./admin/Admin";
 import { signout, isAuthenticated } from './auth';
+import Sig from "./user/sig";
 
 const MainRouter = () => (
     <div>
@@ -25,9 +26,9 @@ const MainRouter = () => (
         
         {!isAuthenticated() && (       
         <div className="main">
- <Route exact path="/" component={Signin} />
-                 <Route exact path="/signup" component={Signup} />
-
+ {/* <Route exact path="/" component={Signin} />
+                 <Route exact path="/signup" component={Signup} /> */}
+ <Route exact path="/" component={Sig} /> 
                  </div>
             )}
 

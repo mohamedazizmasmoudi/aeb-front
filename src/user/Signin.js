@@ -182,7 +182,7 @@ class Signin extends Component {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2" className="opa">
+                  <Link href="#signup" variant="body2" className="opa">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
@@ -191,7 +191,7 @@ class Signin extends Component {
           </div>
           <Box mt={8}>
           <Typography variant="body2" color="textSecondary" align="center">
-      {'Made with ❤️ by Aziz Masmoudi '}
+      {/* {'Made with ❤️ by Aziz Masmoudi '} */}
       {/* <Link color="inherit" href="https://material-ui.com/">
         Your Website
       </Link>{' '}
