@@ -172,8 +172,15 @@ class Signup extends Component {
                  </Grid>
                </form>
              </div>
-             <Box mt={5}>
-                </Box>
+            <Box mt={5}>
+          <Typography variant="body2" color="textSecondary" align="center">
+      {'Made with ❤️ by Aziz Masmoudi '}
+      {/* <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'} */}
+    </Typography>          </Box>
            </Container>
         );
     }
