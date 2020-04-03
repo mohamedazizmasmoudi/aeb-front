@@ -24,12 +24,15 @@ const MainRouter = () => (
 
         
         {!isAuthenticated() && (       
+                         <BrowserRouter>   
+
         <div className="main">
  <Switch>
  <Route exact path="/" component={Signin} />
                  <Route exact path="/signup" component={Signup} />
                  </Switch>
-                 </div>
+                 </div>        </BrowserRouter>
+
             )}
 
 
