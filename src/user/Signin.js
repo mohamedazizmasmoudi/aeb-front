@@ -182,7 +182,7 @@ class Signin extends Component {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2" className="opa">
+                  <Link href="/" variant="body2" className="opa">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
