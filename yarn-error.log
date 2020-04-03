@@ -1,0 +1,69 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @bit/react-bootstrap.react-bootstrap.navbar
+
+PATH: 
+  C:\Users\user\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\user\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\xampp\php;C:\composer;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\atom\bin;C:\Users\user\AppData\Roaming\npm;C:\Users\user\AppData\Local\GitHubDesktop\bin;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Yarn\bin;C:\Users\user\AppData\Roaming\Composer\vendor\bin;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.19.0
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@bit%2freact-bootstrap.react-bootstrap.navbar: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66027:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140539:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141511:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141433:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "react-front",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@material-ui/core": "^4.9.7",
+      "@material-ui/icons": "^4.9.1",
+      "lodash": "^4.17.15",
+      "material-ui-icons": "^1.0.0-beta.36",
+      "react": "^16.7.0",
+      "react-dom": "^16.7.0",
+      "react-google-login": "^5.0.2",
+      "react-google-recaptcha": "^1.0.5",
+      "react-recaptcha": "^2.3.10",
+      "react-router-dom": "^4.3.1",
+      "react-scripts": "^3.4.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "devDependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
